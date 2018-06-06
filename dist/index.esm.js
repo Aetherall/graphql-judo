@@ -84,7 +84,8 @@ var mapSubscriptions = ((middleware, subscriptions) => {
       [resolverName]: {
         subscribe: (parent, args, ctx, info) => {
           return ctx.db.subscription[resolverName](args, info);
-        }
+        },
+        resolve: middleware
       }
     });
   }, {});
